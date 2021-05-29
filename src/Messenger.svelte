@@ -1,0 +1,28 @@
+<script lang="ts">
+  import ContactList from './ContactList.svelte';
+</script>
+
+<div class="bg-white w-full h-64 flex rounded-2xl">
+  <div class="border border-blue-50 border-l-0 border-t-0 border-b-0 w-56 flex flex-col">
+    <div class="border border-blue-50 border-l-0 border-r-0 border-t-0 h-16 flex items-center justify-between">
+      <div class="ml-4">Conversations</div>
+      <div>
+        <button class="bg-blue-50 h-8 w-8 rounded-lg text-sm mr-2"><i class="fas fa-search"></i></button>
+        <button class="bg-blue-400 text-white w-8 h-8 rounded-lg text-sm mr-2"><i class="fas fa-plus"></i></button>
+      </div>
+    </div>
+
+    <div class="relative h-full flex-1">
+      <div class="absolute inset-0 overflow-y-auto">
+        <ContactList />
+      </div>
+    </div>
+  </div>
+
+  <div class="flex-1">
+    <div class="border border-blue-50 border-l-0 border-r-0 border-t-0 h-16"></div>
+  </div>
+</div>
+
+<style>
+</style>
