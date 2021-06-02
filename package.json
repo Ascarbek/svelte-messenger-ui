@@ -8,6 +8,7 @@
     "watch:rollup": "rollup -c -w",
     "watch:tailwind": "postcss public/tailwind.css -o public/index.css -w",
     "dev": "run-p watch:rollup watch:tailwind",
+    "prod": "yarn run build:tailwind && yarn run build:rollup",
     "start": "sirv public --no-clear"
   },
   "devDependencies": {

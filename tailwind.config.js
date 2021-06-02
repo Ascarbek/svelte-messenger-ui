@@ -6,7 +6,7 @@ module.exports = {
     // removeDeprecatedGapUtilities: true,
   },
   purge: {
-    enabled: false,
+    enabled: production,
     content: ['./public/index.html', './src/**/*.svelte'],
     options: {
       defaultExtractor: content => [
