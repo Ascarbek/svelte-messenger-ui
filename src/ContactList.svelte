@@ -1,18 +1,24 @@
 <script lang="ts">
-  import { Contacts } from './Model';
+  import type { Contact } from './Model';
+  export let contacts: Contact[] = []
 </script>
 
-<div>user 1</div>
-<div>user 2</div>
-<div>user 3</div>
-<div>user 4</div>
-<div>user 5</div>
-<div>user 6</div>
-<div>user 7</div>
-<div>user 8</div>
-<div>user 9</div>
-<div>user 10</div>
-<div>user 11</div>
-<div>user 12</div>
-<div>user 13</div>
-<div>user 14</div>
+{#each contacts as contact}
+  <div class="flex items-center p-3 ">
+    <div class="flex items-center justify-center">
+      <img src="{contact.picture}" alt="contact" />
+    </div>
+    <div class="flex-1">
+      <div>{contact.displayName}</div>
+      <div>{contact.lastMessage}</div>
+    </div>
+  </div>
+{/each}
+
+<style>
+  img {
+    max-width: 40px;
+    max-height: 40px;
+    border-radius: 50%;
+  }
+</style>

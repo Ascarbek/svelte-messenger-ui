@@ -7,3 +7,4 @@
 .env
 yarn.lock
 package-lock.json
+/public/index.css

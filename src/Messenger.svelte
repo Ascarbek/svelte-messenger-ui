@@ -1,5 +1,8 @@
 <script lang="ts">
+  import type { Contact } from './Model';
   import ContactList from './ContactList.svelte';
+
+  export let contactList: Contact[] = [];
 </script>
 
 <div class="bg-white w-full h-64 flex rounded-2xl">
@@ -13,8 +16,8 @@
     </div>
 
     <div class="relative h-full flex-1">
-      <div class="absolute inset-0 overflow-y-auto">
-        <ContactList />
+      <div class="absolute inset-0 overflow-y-auto px-4">
+        <ContactList contacts="{contactList}" />
       </div>
     </div>
   </div>

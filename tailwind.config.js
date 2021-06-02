@@ -2,14 +2,18 @@ const production = !process.env.ROLLUP_WATCH;
 
 module.exports = {
   future: {
-    purgeLayersByDefault: true,
-    removeDeprecatedGapUtilities: true,
+    // purgeLayersByDefault: true,
+    // removeDeprecatedGapUtilities: true,
   },
   purge: {
-    content: [
-      "./src/**/*.svelte",
-    ],
-    enabled: production // disable purge in dev
+    enabled: false,
+    content: ['./public/index.html', './src/**/*.svelte'],
+    options: {
+      defaultExtractor: content => [
+        ...(content.match(/[^<>"'`\s]*[^<>"'`\s:]/g) || []),
+        ...(content.match(/(?<=class:)[^=>\/\s]*/g) || []),
+      ],
+    },
   },
   darkMode: false, // or 'media' or 'class'
   theme: {

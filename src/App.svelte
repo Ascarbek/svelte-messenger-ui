@@ -1,20 +1,24 @@
 <script lang="ts">
   import { onMount } from 'svelte';
+  import type { Contact } from './Model';
   import Messenger from './Messenger.svelte';
+  import SampleContacts from './SampleContacts';
 
-  onMount(() => {});
+  let contacts: Contact[] = [];
+
+  onMount(() => {
+    contacts = SampleContacts;
+  });
 </script>
 
 <div class="h-screen w-screen bg-blue-50">
   <div class="p-12">
     <h1 class="text-2xl mb-4">Messenger</h1>
-    <Messenger />
+    <Messenger contactList="{contacts}" />
   </div>
 </div>
 
-<style global>
-  @tailwind base;
-  @tailwind utilities;
+<style >
   body {
     font-family: 'Roboto Condensed', sans-serif;
   }
