@@ -4,13 +4,17 @@
 </script>
 
 {#each contacts as contact}
-  <div class="flex items-center p-3 ">
-    <div class="flex items-center justify-center">
+  <div class="flex items-center px-4 py-5 w-full">
+    <div class="flex items-center justify-center mr-4 ">
       <img src="{contact.picture}" alt="contact" />
     </div>
-    <div class="flex-1">
-      <div>{contact.displayName}</div>
-      <div>{contact.lastMessage}</div>
+    <div class="flex-1 flex flex-col min-w-0">
+      <div class="text-sm whitespace-nowrap overflow-ellipsis overflow-hidden font-bold">{contact.displayName}</div>
+      <div class="text-xs text-gray-600 whitespace-nowrap overflow-ellipsis overflow-hidden">{contact.lastMessage}</div>
+    </div>
+    <div class="flex flex-col items-end">
+      <div class="text-xs text-gray-500 mb-1">12:04</div>
+      <div class="bg-red-500 text-white text-xs rounded-xl px-1.5 text-center">12</div>
     </div>
   </div>
 {/each}

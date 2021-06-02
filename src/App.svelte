@@ -7,7 +7,7 @@
   let contacts: Contact[] = [];
 
   onMount(() => {
-    contacts = SampleContacts;
+    contacts = SampleContacts as Contact[];
   });
 </script>
 
