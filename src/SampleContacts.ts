@@ -1,4 +1,6 @@
-export default [
+import type { Contact } from './Model';
+
+const SampleContacts: Contact[] = [
   {
     displayName: 'Dewey Klein MD',
     picture: 'https://cdn.fakercloud.com/avatars/themikenagle_128.jpg',
@@ -600,3 +602,5 @@ export default [
     lastTime: '04:31 a.m.',
   },
 ];
+
+export default SampleContacts;

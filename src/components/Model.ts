@@ -9,8 +9,12 @@ export interface Contact {
 }
 
 export interface Message {
-
+  displayName:string;
+  picture:string;
+  messageTime:string;
+  messageText:string;
 }
 
 
 export const Contacts = writable<Contact[]>([]);
+export const Messages = writable<Message[]>([]);

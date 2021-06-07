@@ -1,8 +1,10 @@
 <script lang="ts">
-  import type { Contact } from './Model';
+  import type { Contact, Message } from './Model';
   import ContactList from './ContactList.svelte';
+  import MessageList from './MessageList.svelte';
 
   export let contactList: Contact[] = [];
+  export let messages: Message[] = [];
 </script>
 
 <div class="bg-white w-full flex rounded-2xl messenger">
@@ -22,8 +24,13 @@
     </div>
   </div>
 
-  <div class="flex-1">
+  <div class="flex-1 flex flex-col">
     <div class="border border-blue-50 border-l-0 border-r-0 border-t-0 h-16"></div>
+    <div class="relative h-full flex-1">
+      <div class="absolute inset-0 overflow-y-auto p-4">
+        <MessageList messages="{messages}" />
+      </div>
+    </div>
   </div>
 </div>
 
