@@ -7,7 +7,11 @@
   let contacts: Contact[] = [];
 
   onMount(() => {
-    contacts = SampleContacts as Contact[];
+    contacts = <Contact[]>SampleContacts.map((c) => ({
+      ...c,
+    }));
+    contacts[0].unreadCount = 1;
+    contacts[1].unreadCount = 2;
   });
 </script>
 

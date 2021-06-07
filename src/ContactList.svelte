@@ -13,8 +13,8 @@
       <div class="text-xs text-gray-600 whitespace-nowrap overflow-ellipsis overflow-hidden">{contact.lastMessage}</div>
     </div>
     <div class="flex flex-col items-end">
-      <div class="text-xs text-gray-500 mb-1">12:04</div>
-      <div class="bg-red-500 text-white text-xs rounded-xl px-1.5 text-center">12</div>
+      <div class="text-xs text-gray-500 mb-1">{contact.lastTime}</div>
+      <div class="bg-red-500 text-white text-xs rounded-xl px-1.5 text-center">{contact.unreadCount || ''}</div>
     </div>
   </div>
 {/each}
